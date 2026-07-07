@@ -219,13 +219,13 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch("https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
+        const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
 
         const result = await response.json();
 
