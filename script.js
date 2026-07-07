@@ -1,10 +1,7 @@
-const params = new URLSearchParams(window.location.search);
-const nama = params.get("to");
-
-document.getElementById("guestName").innerText =
-    nama ? decodeURIComponent(nama) : "Tamu Undangan";
-
 document.addEventListener('DOMContentLoaded', () => {
+    const guestName = document.getElementById('guest-name');
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get('to');
     const btnOpen = document.getElementById('open-invitation');
     const cover = document.getElementById('cover');
     const mainContent = document.getElementById('main-content');
@@ -12,6 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const bgMusic = document.getElementById('bg-music');
     const musicIcon = document.getElementById('music-icon');
     let isPlaying = false;
+
+    if (guestName) {
+        guestName.innerText = nama
+            ? decodeURIComponent(nama)
+            : "Tamu Undangan";
+    }
 
     // Buka Undangan
     btnOpen.addEventListener('click', () => {
