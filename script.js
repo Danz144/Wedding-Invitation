@@ -198,41 +198,54 @@ function copyText(elementId) {
 
 const form = document.getElementById("rsvp-form");
 
-form.addEventListener("submit", async (e)=>{
+// Ambil nama tamu dari URL
+const namaTamu = new URLSearchParams(window.location.search).get("to") || "Tamu Undangan";
+
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
     const data = {
 
-        nama:document.getElementById("nama").value,
+        nama: namaTamu,
 
-        kehadiran:document.getElementById("kehadiran").value,
+        kehadiran: document.getElementById("guest-attendance").value,
 
-        jumlah:document.getElementById("jumlah").value,
+        jumlah: document.getElementById("guest-count").value,
 
-        ucapan:document.getElementById("ucapan").value
+        ucapan: document.getElementById("guest-message").value
 
     };
 
-    const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec",
-        {
+    try {
 
-            method:"POST",
+        const response = await fetch("https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-            body:JSON.stringify(data)
+        const result = await response.json();
+
+        if (result.status === "success") {
+
+            alert("Terima kasih, konfirmasi kehadiran berhasil dikirim 😊");
+
+            form.reset();
+
+        } else {
+
+            alert("Terjadi kesalahan, silakan coba lagi.");
 
         }
 
-    );
+    } catch (error) {
 
-    const result = await response.json();
+        console.error(error);
 
-    if(result.status=="success"){
-
-        alert("Terima kasih atas konfirmasinya 😊");
-
-        form.reset();
+        alert("Gagal mengirim data.");
 
     }
 
