@@ -195,3 +195,45 @@ function copyText(elementId) {
         console.error('Failed to copy!', err);
     });
 }
+
+const form = document.getElementById("rsvp-form");
+
+form.addEventListener("submit", async (e)=>{
+
+    e.preventDefault();
+
+    const data = {
+
+        nama:document.getElementById("nama").value,
+
+        kehadiran:document.getElementById("kehadiran").value,
+
+        jumlah:document.getElementById("jumlah").value,
+
+        ucapan:document.getElementById("ucapan").value
+
+    };
+
+    const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec",
+        {
+
+            method:"POST",
+
+            body:JSON.stringify(data)
+
+        }
+
+    );
+
+    const result = await response.json();
+
+    if(result.status=="success"){
+
+        alert("Terima kasih atas konfirmasinya 😊");
+
+        form.reset();
+
+    }
+
+});
