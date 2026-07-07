@@ -10,12 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicIcon = document.getElementById('music-icon');
     let isPlaying = false;
 
+    console.log("window.location.href =", window.location.href);
+    console.log("window.location.search =", window.location.search);
+    console.log("nama =", nama);
+    
     if (guestName) {
         guestName.innerText = nama
             ? decodeURIComponent(nama)
             : "Tamu Undangan";
     }
-
+    
     // Buka Undangan
     btnOpen.addEventListener('click', () => {
         // Efek scroll lock dilepas
