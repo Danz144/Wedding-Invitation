@@ -198,29 +198,31 @@ function copyText(elementId) {
 
 const form = document.getElementById("rsvp-form");
 
-// Ambil nama tamu dari URL
-const namaTamu = new URLSearchParams(window.location.search).get("to") || "Tamu Undangan";
+const namaTamu =
+    new URLSearchParams(window.location.search).get("to") || "Tamu Undangan";
 
 form.addEventListener("submit", async (e) => {
-
     e.preventDefault();
 
-    const data = {
+    const formData = new URLSearchParams();
 
-        nama: namaTamu,
-
-        kehadiran: document.getElementById("guest-attendance").value,
-
-        jumlah: document.getElementById("guest-count").value,
-
-        ucapan: document.getElementById("guest-message").value
-
-    };
+    formData.append("nama", namaTamu);
+    formData.append(
+        "kehadiran",
+        document.getElementById("guest-attendance").value
+    );
+    formData.append(
+        "jumlah",
+        document.getElementById("guest-count").value
+    );
+    formData.append(
+        "ucapan",
+        document.getElementById("guest-message").value
+    );
 
     try {
-
         const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzD_2DXoMNw2n7gI5BFz_PtErHHk_r-W-8Kx7VID6m9lg-dBKGF3b1bLATrWqocO4J_NA/exec",
+            "https://script.google.com/macros/s/AKfycbwe92hZ48lRUE13b8qz_2mxMbN2nuFoSWWTTO3_RqhFm4c-7_0IvEjrtKErOKQ3J9zrNg/exec",
             {
                 method: "POST",
                 body: formData
@@ -230,23 +232,14 @@ form.addEventListener("submit", async (e) => {
         const result = await response.json();
 
         if (result.status === "success") {
-
             alert("Terima kasih, konfirmasi kehadiran berhasil dikirim 😊");
-
             form.reset();
-
         } else {
-
-            alert("Terjadi kesalahan, silakan coba lagi.");
-
+            alert("Terjadi kesalahan.");
         }
 
-    } catch (error) {
-
-        console.error(error);
-
+    } catch (err) {
+        console.error(err);
         alert("Gagal mengirim data.");
-
     }
-
 });
