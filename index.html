@@ -217,15 +217,44 @@
                 </div>
                 <div class="rsvp-container">
                     <!-- Form RSVP -->
-                    <form id="rsvp-form" class="rsvp-form dark-section">
-                        <input type="text" id="guest-name" placeholder="Nama Anda" required>
+                   <form id="rsvp-form" class="rsvp-form dark-section">
+                        <input
+                            type="text"
+                            id="guest-name"
+                            placeholder="Nama Tamu"
+                            readonly
+                            required>
+                    
                         <select id="guest-attendance" required>
-                            <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                    
+                            <option value="" disabled selected>
+                                Konfirmasi Kehadiran
+                            </option>
+                    
                             <option value="Hadir">Hadir</option>
+                    
                             <option value="Tidak Hadir">Tidak Hadir</option>
+                    
                         </select>
-                        <textarea id="guest-message" placeholder="Tulis doa & ucapan..." rows="4" required></textarea>
-                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
+                    
+                        <input
+                            type="number"
+                            id="guest-count"
+                            placeholder="Jumlah Tamu"
+                            min="1"
+                            max="10">
+                    
+                        <textarea
+                            id="guest-message"
+                            rows="4"
+                            placeholder="Tulis doa & ucapan..."
+                            required></textarea>
+                    
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Kirim Ucapan
+                        </button>
+                    
                     </form>
 
                     <!-- Guestbook Comments -->
