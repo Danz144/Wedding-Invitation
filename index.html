@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Ilham & Sri</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Particle & Flower Animations Container -->
+    <div id="flower-container"></div>
+
+    <!-- Cover -->
+    <div id="cover" class="cover-screen dark-section">
+        <!-- Megamendung Pattern -->
+        <div class="megamendung top"></div>
+        <div class="megamendung bottom"></div>
+
+        <div class="cover-content">
+            <!-- Keraton Emblem -->
+            <svg viewBox="0 0 200 120" class="floral-ornament gunungan-anim" style="max-height: 120px; display: block; margin: 0 auto 20px auto;">
+                <path d="M90 60 C 60 20, 20 20, 0 60 C 20 70, 40 80, 90 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <path d="M85 65 C 60 35, 30 35, 15 65 C 30 72, 45 80, 85 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                <path d="M110 60 C 140 20, 180 20, 200 60 C 180 70, 160 80, 110 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <path d="M115 65 C 140 35, 170 35, 185 65 C 170 72, 155 80, 115 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                <ellipse cx="100" cy="65" rx="15" ry="25" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <ellipse cx="100" cy="65" rx="8" ry="15" fill="var(--primary-color)"/>
+                <path d="M85 30 L95 10 L100 20 L105 10 L115 30 Z" fill="var(--primary-color)"/>
+                <circle cx="95" cy="10" r="3" fill="var(--primary-color)"/>
+                <circle cx="105" cy="10" r="3" fill="var(--primary-color)"/>
+                <path d="M80 100 Q 100 120 120 100" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+            </svg>
+            <h4>The Wedding Of</h4>
+            <h1>Ilham & Sri</h1>
+            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <div class="guest-name">Tamu Undangan</div>
+            <p class="apology">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di acara pernikahan kami.</p>
+            <button id="open-invitation" class="btn-open"><i class="fas fa-envelope-open"></i> Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+        <!-- Hero Section -->
+        <section class="hero dark-section" id="home">
+            <div class="megamendung top"></div>
+            <div class="hero-text">
+                <!-- Keraton Emblem -->
+                <svg viewBox="0 0 200 120" class="floral-ornament gunungan-anim" style="max-height: 100px; display: block; margin: 0 auto 20px auto;">
+                    <path d="M90 60 C 60 20, 20 20, 0 60 C 20 70, 40 80, 90 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                    <path d="M85 65 C 60 35, 30 35, 15 65 C 30 72, 45 80, 85 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                    <path d="M110 60 C 140 20, 180 20, 200 60 C 180 70, 160 80, 110 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                    <path d="M115 65 C 140 35, 170 35, 185 65 C 170 72, 155 80, 115 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                    <ellipse cx="100" cy="65" rx="15" ry="25" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                    <ellipse cx="100" cy="65" rx="8" ry="15" fill="var(--primary-color)"/>
+                    <path d="M85 30 L95 10 L100 20 L105 10 L115 30 Z" fill="var(--primary-color)"/>
+                    <circle cx="95" cy="10" r="3" fill="var(--primary-color)"/>
+                    <circle cx="105" cy="10" r="3" fill="var(--primary-color)"/>
+                    <path d="M80 100 Q 100 120 120 100" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                </svg>
+                <p>We Are Getting Married</p>
+                <h2>Ilham & Sri</h2>
+                <p>08 Agustus 2026</p>
+            </div>
+            <div class="megamendung bottom"></div>
+        </section>
+
+        <!-- Surah Section -->
+        <section class="surah reveal" id="surah">
+            <div class="container">
+                <div class="surah-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Bismillah_Calligraphy.svg/1200px-Bismillah_Calligraphy.svg.png" alt="Bismillah" class="bismillah" style="max-height: 60px; margin-bottom: 25px; filter: invert(0.8);" onerror="this.style.display='none'">
+                    <p class="arabic">وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+                    <p class="translation">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+                    <p class="surah-name">(QS. Ar-Rum: 21)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Couple Section -->
+        <section class="couple reveal" id="couple">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mempelai</h2>
+                    <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan putra-putri kami:</p>
+                </div>
+                <div class="couple-wrapper">
+                    <!-- Groom -->
+                    <div class="person">
+                        <div class="photo">
+                            <div class="photo-placeholder"><i class="fas fa-male"></i></div>
+                        </div>
+                        <h3>Muhammad Ilham Maulana S.M.</h3>
+                        <p>Putra dari:<br>Bapak Nahawardi & Ibu Nyai Rosidah</p>
+                    </div>
+                    
+                    <div class="amp">&</div>
+                    
+                    <!-- Bride -->
+                    <div class="person">
+                        <div class="photo">
+                            <div class="photo-placeholder"><i class="fas fa-female"></i></div>
+                        </div>
+                        <h3>Sri Mulyani</h3>
+                        <p>Putri dari:<br>Bapak Aris & Ibu Waginah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Section -->
+        <section class="event reveal dark-section" id="event">
+            <div class="megamendung top"></div>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Save The Date</h2>
+                    <p>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
+                </div>
+
+                <div class="countdown">
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <p>Hari</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <p>Jam</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <p>Menit</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+
+                <div class="event-details">
+                    <div class="card akad">
+                        <i class="fas fa-ring icon"></i>
+                        <h3>Akad Nikah & Resepsi</h3>
+                        <div class="detail-row">
+                            <i class="far fa-calendar"></i>
+                            <p>Sabtu, 08 Agustus 2026</p>
+                        </div>
+                        <div class="detail-row">
+                            <i class="far fa-clock"></i>
+                            <p>08.00 WIB s/d Selesai</p>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Lokasi Acara</strong><br>Kediaman Mempelai<br>Jl. H.Nala, Kelurahan Kalimulya, Kecamatan Cilodong, Kota Depok</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/5vXu1fLmr1JNDq8B9" target="_blank" class="btn-map"><i class="fas fa-map"></i> Lihat Peta Lokasi</a>
+                    </div>
+                </div>
+            </div>
+            <div class="megamendung bottom"></div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery reveal" id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galeri Kami</h2>
+                    <p>Momen bahagia yang kami lalui bersama</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="asset/gallery/1.jpg" alt="Gallery 1" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+1'"></div>
+                    <div class="gallery-item"><img src="asset/gallery/2.jpg" alt="Gallery 2" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+2'"></div>
+                    <div class="gallery-item"><img src="asset/gallery/3.jpg" alt="Gallery 3" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+3'"></div>
+                    <div class="gallery-item"><img src="asset/gallery/4.jpg" alt="Gallery 4" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+4'"></div>
+                    <div class="gallery-item"><img src="asset/gallery/5.jpg" alt="Gallery 5" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+5'"></div>
+                    <div class="gallery-item"><img src="asset/gallery/6.jpg" alt="Gallery 6" onerror="this.src='https://via.placeholder.com/400x400/182e25/9b722d?text=Foto+6'"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Envelope (Amplop Digital) -->
+        <section class="gift reveal dark-section" id="gift">
+            <div class="megamendung top"></div>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Amplop Digital</h2>
+                    <p>Bagi keluarga dan sahabat yang ingin memberikan tanda kasih untuk kami, dapat melalui :</p>
+                </div>
+                <div class="gift-wrapper">
+                    <div class="gift-card">
+                        <i class="fas fa-credit-card gift-icon"></i>
+                        <h3>Bank BCA</h3>
+                        <p class="account-number" id="rek-1">1234567890</p>
+                        <p class="account-name">a.n Muhammad Ilham Maulana</p>
+                        <button class="btn-copy" onclick="copyText('rek-1')"><i class="fas fa-copy"></i> Salin Rekening</button>
+                    </div>
+                    <div class="gift-card">
+                        <i class="fas fa-wallet gift-icon"></i>
+                        <h3>DANA / GoPay</h3>
+                        <p class="account-number" id="rek-2">081234567890</p>
+                        <p class="account-name">a.n Sri Mulyani</p>
+                        <button class="btn-copy" onclick="copyText('rek-2')"><i class="fas fa-copy"></i> Salin Rekening</button>
+                    </div>
+                </div>
+            </div>
+            <div class="megamendung bottom"></div>
+        </section>
+
+        <!-- RSVP & Guestbook Section -->
+        <section class="rsvp reveal" id="rsvp">
+            <div class="container">
+                <div class="section-title">
+                    <h2>RSVP & Buku Tamu</h2>
+                    <p>Kehadiran dan doa restu Anda adalah kado terindah bagi kami.</p>
+                </div>
+                <div class="rsvp-container">
+                    <!-- Form RSVP -->
+                    <form id="rsvp-form" class="rsvp-form dark-section">
+                        <input type="text" id="guest-name" placeholder="Nama Anda" required>
+                        <select id="guest-attendance" required>
+                            <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                        <textarea id="guest-message" placeholder="Tulis doa & ucapan..." rows="4" required></textarea>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
+                    </form>
+
+                    <!-- Guestbook Comments -->
+                    <div class="guestbook dark-section">
+                        <h3 style="color: var(--primary-color);">Ucapan & Doa (<span id="comment-count">1</span>)</h3>
+                        <div class="comments-list" id="comments-list">
+                            <div class="comment-item">
+                                <div class="comment-header">
+                                    <span class="name">Tamu Spesial</span>
+                                    <span class="badge hadir"><i class="fas fa-check-circle"></i> Hadir</span>
+                                </div>
+                                <p class="message">Selamat menempuh hidup baru Ilham dan Sri. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+                                <span class="comment-time">Baru saja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dark-section">
+            <div class="megamendung top"></div>
+            <!-- Keraton Emblem -->
+            <svg viewBox="0 0 200 120" class="floral-ornament gunungan-anim" style="max-height: 80px; display: block; margin: 0 auto 20px auto;">
+                <path d="M90 60 C 60 20, 20 20, 0 60 C 20 70, 40 80, 90 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <path d="M85 65 C 60 35, 30 35, 15 65 C 30 72, 45 80, 85 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                <path d="M110 60 C 140 20, 180 20, 200 60 C 180 70, 160 80, 110 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <path d="M115 65 C 140 35, 170 35, 185 65 C 170 72, 155 80, 115 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
+                <ellipse cx="100" cy="65" rx="15" ry="25" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+                <ellipse cx="100" cy="65" rx="8" ry="15" fill="var(--primary-color)"/>
+                <path d="M85 30 L95 10 L100 20 L105 10 L115 30 Z" fill="var(--primary-color)"/>
+                <circle cx="95" cy="10" r="3" fill="var(--primary-color)"/>
+                <circle cx="105" cy="10" r="3" fill="var(--primary-color)"/>
+                <path d="M80 100 Q 100 120 120 100" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
+            </svg>
+            <p>Terima Kasih</p>
+            <h2>Ilham & Sri</h2>
+        </footer>
+    </main>
+
+    <!-- Audio Player (hidden) -->
+    <div class="audio-control hidden" id="audio-control">
+        <i class="fas fa-music" id="music-icon"></i>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="asset/music/Payung Teduh - Akad.mp3.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
