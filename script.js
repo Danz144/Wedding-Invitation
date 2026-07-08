@@ -231,15 +231,103 @@ form.addEventListener("submit", async (e) => {
 
         const result = await response.json();
 
-        if (result.status === "success") {
-            alert("Terima kasih, konfirmasi kehadiran berhasil dikirim 😊");
-            form.reset();
-        } else {
-            alert("Terjadi kesalahan.");
-        }
+        if(result.status==="success"){
+
+                form.reset();
+            
+                await loadComments();
+            
+                alert("Terima kasih 😊");
+            
+            }
 
     } catch (err) {
         console.error(err);
         alert("Gagal mengirim data.");
     }
 });
+
+async function loadComments() {
+
+    try{
+
+        const response = await fetch(API_URL);
+
+        const comments = await response.json();
+
+        const list = document.getElementById("comments-list");
+
+        list.innerHTML = "";
+
+        document.getElementById("comment-count").textContent = comments.length;
+
+        comments.forEach(comment=>{
+
+            const badge =
+                comment.kehadiran === "Hadir"
+                ? "hadir"
+                : "tidak-hadir";
+
+            list.innerHTML += `
+            <div class="comment-item">
+
+                <div class="comment-header">
+
+                    <span class="name">
+                        ${comment.nama}
+                    </span>
+
+                    <span class="badge ${badge}">
+                        ${comment.kehadiran}
+                    </span>
+
+                </div>
+
+                <p class="message">
+
+                    ${comment.ucapan}
+
+                </p>
+
+                <span class="comment-time">
+
+                    ${formatTime(comment.timestamp)}
+
+                </span>
+
+            </div>
+            `;
+
+        });
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+    }
+
+}
+
+function formatTime(date){
+
+    const now = new Date();
+
+    const post = new Date(date);
+
+    const diff = Math.floor((now-post)/1000);
+
+    if(diff<60)
+        return "Baru saja";
+
+    if(diff<3600)
+        return Math.floor(diff/60)+" menit yang lalu";
+
+    if(diff<86400)
+        return Math.floor(diff/3600)+" jam yang lalu";
+
+    return post.toLocaleDateString("id-ID");
+}
+
+loadComments();
