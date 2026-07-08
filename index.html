@@ -82,42 +82,47 @@
 
         <!-- Couple Section -->
         <section class="couple reveal" id="couple">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Mempelai</h2>
-                    <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan putra-putri kami:</p>
-                </div>
-                <div class="couple-wrapper">
-                    <!-- Groom -->
-                    <div class="person">
-                        <div class="photo">
-                            <div class="photo-placeholder"><i class="fas fa-male"></i></div>
-                        </div>
-                        <h3>Muhammad Ilham Maulana S.M.</h3>
-                        <p>Putra dari:<br>Bapak Nahawardi & Ibu Nyai Rosidah</p>
-                    </div>
+            <div class="couple-wrapper">
+                <p>Assalamu'alaikum Wr. Wb.</p>
+                <P>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri Resepsi Pernikahan kami.</P>
+
+                <!-- Groom -->
+                <div class="person">
+                    <h3>Muhammad Ilcham Maulana</h3>
                     
-                    <div class="amp">&</div>
-                    
-                    <!-- Bride -->
-                    <div class="person">
-                        <div class="photo">
-                            <div class="photo-placeholder"><i class="fas fa-female"></i></div>
-                        </div>
-                        <h3>Sri Mulyani</h3>
-                        <p>Putri dari:<br>Bapak Aris & Ibu Waginah</p>
+                    <div class="photo">
+                        <img src="img/groom.jpg" alt="Groom">
                     </div>
+            
+                    <p>Putra kedua dari 
+                    Bapak Nahwardi & Ibu Nyai Rosidah</p>
                 </div>
+            
+                <div class="amp">&</div>
+            
+                <!-- Bride -->
+                <div class="person">
+            
+                    <div class="photo">
+                        <img src="img/bride.jpg" alt="Bride">
+                    </div>
+            
+                    <h3>Sri Mulyani</h3>
+    
+                    <p>Putri ketiga dari 
+                    Bapak Aris & Ibu Waginah</p>
+                </div>
+            
             </div>
         </section>
 
         <!-- Event Section -->
-        <section class="event reveal dark-section" id="event">
+        <section class="event" id="event">
             <div class="megamendung top"></div>
             <div class="container">
-                <div class="section-title">
+                <div class="event-title">
                     <h2>Save The Date</h2>
-                    <p>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
+                
                 </div>
 
                 <div class="countdown">
@@ -142,7 +147,7 @@
                 <div class="event-details">
                     <div class="card akad">
                         <i class="fas fa-ring icon"></i>
-                        <h3>Akad Nikah & Resepsi</h3>
+                        <h3>Resepsi Pernikahan</h3>
                         <div class="detail-row">
                             <i class="far fa-calendar"></i>
                             <p>Sabtu, 08 Agustus 2026</p>
@@ -163,7 +168,7 @@
         </section>
 
         <!-- Gallery Section -->
-        <section class="gallery reveal" id="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <div class="section-title">
                     <h2>Galeri Kami</h2>
@@ -180,34 +185,6 @@
             </div>
         </section>
 
-        <!-- Digital Envelope (Amplop Digital) -->
-        <section class="gift reveal dark-section" id="gift">
-            <div class="megamendung top"></div>
-            <div class="container">
-                <div class="section-title">
-                    <h2>Amplop Digital</h2>
-                    <p>Bagi keluarga dan sahabat yang ingin memberikan tanda kasih untuk kami, dapat melalui :</p>
-                </div>
-                <div class="gift-wrapper">
-                    <div class="gift-card">
-                        <i class="fas fa-credit-card gift-icon"></i>
-                        <h3>Bank BCA</h3>
-                        <p class="account-number" id="rek-1">1234567890</p>
-                        <p class="account-name">a.n Muhammad Ilham Maulana</p>
-                        <button class="btn-copy" onclick="copyText('rek-1')"><i class="fas fa-copy"></i> Salin Rekening</button>
-                    </div>
-                    <div class="gift-card">
-                        <i class="fas fa-wallet gift-icon"></i>
-                        <h3>DANA / GoPay</h3>
-                        <p class="account-number" id="rek-2">081234567890</p>
-                        <p class="account-name">a.n Sri Mulyani</p>
-                        <button class="btn-copy" onclick="copyText('rek-2')"><i class="fas fa-copy"></i> Salin Rekening</button>
-                    </div>
-                </div>
-            </div>
-            <div class="megamendung bottom"></div>
-        </section>
-
         <!-- RSVP & Guestbook Section -->
         <section class="rsvp reveal" id="rsvp">
             <div class="container">
@@ -217,7 +194,7 @@
                 </div>
                 <div class="rsvp-container">
                     <!-- Form RSVP -->
-                   <form id="rsvp-form" class="rsvp-form dark-section">
+                   <form id="rsvp-form" class="rsvp-form">
                     
                         <select id="guest-attendance" required>
                     
@@ -254,11 +231,38 @@
             </div>
         </section>
 
+        <!-- Digital Envelope (Amplop Digital) -->
+        <section class="gift" id="gift">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Amplop Digital</h2>
+                    <p>Bagi keluarga dan sahabat yang ingin memberikan tanda kasih untuk kami, dapat melalui :</p>
+                </div>
+                <div class="gift-wrapper">
+                    <div class="gift-card">
+                        <i class="fas fa-credit-card gift-icon"></i>
+                        <h3>Bank BCA</h3>
+                        <p class="account-number" id="rek-1">1234567890</p>
+                        <p class="account-name">a.n Muhammad Ilham Maulana</p>
+                        <button class="btn-copy" onclick="copyText('rek-1')"><i class="fas fa-copy"></i> Salin Rekening</button>
+                    </div>
+                    <div class="gift-card">
+                        <i class="fas fa-wallet gift-icon"></i>
+                        <h3>DANA / GoPay</h3>
+                        <p class="account-number" id="rek-2">081234567890</p>
+                        <p class="account-name">a.n Sri Mulyani</p>
+                        <button class="btn-copy" onclick="copyText('rek-2')"><i class="fas fa-copy"></i> Salin Rekening</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Footer -->
-        <footer class="dark-section">
+        <footer class="footer">
             <div class="megamendung top"></div>
             <!-- Keraton Emblem -->
-            <svg viewBox="0 0 200 120" class="floral-ornament gunungan-anim" style="max-height: 80px; display: block; margin: 0 auto 20px auto;">
+            <svg viewBox="0 0 200 120" class="floral-ornament gunungan-anim" style="max-height: 80px; display: block; margin-top: 200px; margin-left: 330px;">
                 <path d="M90 60 C 60 20, 20 20, 0 60 C 20 70, 40 80, 90 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
                 <path d="M85 65 C 60 35, 30 35, 15 65 C 30 72, 45 80, 85 85 Z" fill="none" stroke="var(--primary-color)" stroke-width="2"/>
                 <path d="M110 60 C 140 20, 180 20, 200 60 C 180 70, 160 80, 110 90 Z" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
@@ -270,7 +274,14 @@
                 <circle cx="105" cy="10" r="3" fill="var(--primary-color)"/>
                 <path d="M80 100 Q 100 120 120 100" fill="none" stroke="var(--primary-color)" stroke-width="4"/>
             </svg>
-            <p>Terima Kasih</p>
+            <div class="footer-photo">
+                <img src="asset/img/groom.png" alt="Ilham">
+            </div>
+            <div class="footer-p">
+                <p >Merupakan suatu kebahagian dan kehorasan kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua kami.</p>
+                <P>Wassalamualaikum Wr. Wb.</P>
+                <p class="foot-closing">Kami yang berbahagia</p>
+            </div>
             <h2>Ilham & Sri</h2>
         </footer>
     </main>
