@@ -251,7 +251,7 @@ async function loadComments() {
 
     try{
 
-        const response = await fetch(API_URL);
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwe92hZ48lRUE13b8qz_2mxMbN2nuFoSWWTTO3_RqhFm4c-7_0IvEjrtKErOKQ3J9zrNg/exec");
 
         const comments = await response.json();
 
