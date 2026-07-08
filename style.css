@@ -1,9 +1,8 @@
 :root {
-    --primary-color: #d4af37; /* Keraton Gold */
-    --secondary-color: #38220f; /* Coklat Kopi / Sogan Dark */
+    --primary-color: #d4af37; /* Keraton Gold */ 
     --dark-text: #2b180d; /* Dark Brown Text */
     --light-text: #f7f3e8; /* Warm Cream */
-    --bg-color: #f7f3e8; /* Cream Base */
+    --bg-image: url("asset/img/background1.jfif"); /* Cream Base */
     --font-heading: 'Playfair Display', serif;
     --font-text: 'Poppins', sans-serif;
 }
@@ -17,8 +16,9 @@
 body {
     font-family: var(--font-text);
     color: var(--dark-text);
-    background-color: var(--bg-color);
+    background-color: var(--bg-image);
     overflow-x: hidden;
+    position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -32,9 +32,10 @@ h1, h2, h3, h4 {
 
 /* Keraton Dark Section Utility */
 .dark-section {
-    background-color: var(--secondary-color) !important;
+    background-image: var(--bg-image) !important;
     color: var(--light-text) !important;
     position: relative;
+    background-size: cover;
 }
 .dark-section p, .dark-section .apology, .dark-section .account-name {
     color: #d8d4c7 !important;
@@ -43,34 +44,11 @@ h1, h2, h3, h4 {
     color: var(--primary-color) !important;
 }
 .dark-section .card, .dark-section .gift-card, .dark-section .comment-item, .dark-section .time-box {
-    background-color: #4a2e15 !important;
+    background-color: #328066 !important;
     color: var(--light-text);
     border: 1px solid rgba(212, 175, 55, 0.2);
 }
-.dark-section .detail-row p, .dark-section .message {
-    color: #d8d4c7 !important;
-}
 
-/* Removed corner ornaments as per user request */
-
-/* Megamendung Borders */
-.megamendung {
-    position: absolute;
-    width: 100%;
-    height: 60px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cpath d='M0 60 C 0 30, 30 30, 30 60 C 30 20, 70 20, 70 60 C 70 10, 120 10, 120 60' fill='none' stroke='%23d4af37' stroke-width='4'/%3E%3Cpath d='M0 60 C 0 38, 22 38, 22 60 C 22 28, 62 28, 62 60 C 62 18, 112 18, 112 60' fill='none' stroke='%23d4af37' stroke-width='2' opacity='0.7'/%3E%3Cpath d='M0 60 C 0 46, 14 46, 14 60 C 14 36, 54 36, 54 60 C 54 26, 104 26, 104 60' fill='none' stroke='%23d4af37' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E");
-    background-size: 120px 60px;
-    background-repeat: repeat-x;
-    opacity: 0.8; 
-    pointer-events: none;
-    z-index: 1;
-}
-/* Convert Megamendung to Gold in dark sections */
-.dark-section .megamendung {
-    opacity: 0.8;
-}
-.megamendung.top { top: 0; }
-.megamendung.bottom { bottom: 0; transform: scaleY(-1); }
 
 /* Floral Ornament / Gunungan */
 .floral-ornament {
@@ -92,7 +70,7 @@ h1, h2, h3, h4 {
 
 /* Cover Screen */
 .cover-screen {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -103,6 +81,7 @@ h1, h2, h3, h4 {
     z-index: 9999;
     text-align: center;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    background-size: cover;
 }
 
 .cover-screen.slide-up {
@@ -111,7 +90,7 @@ h1, h2, h3, h4 {
 }
 
 .cover-content {
-    background: rgba(175, 137, 104, 0.85); /* Semi-transparent Coffee Brown */
+    background: rgba(61, 142, 92, 0.85); /* Semi-transparent Coffee Brown */
     padding: 40px;
     border-radius: 20px;
     border: 2px solid var(--primary-color); /* Gold Border */
@@ -181,6 +160,7 @@ h1, h2, h3, h4 {
     padding: 80px 20px;
     position: relative;
     z-index: 2;
+    background-size: cover;
 }
 
 .section-title {
@@ -229,13 +209,21 @@ h1, h2, h3, h4 {
 
 /* Surah Section */
 .surah {
-    background-color: var(--bg-color);
-    text-align: center;
+    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/Background3.jfif");
+    padding: 80px 20px;
 }
+
 .surah-content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
+    padding: 40px 30px;
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+
 .arabic {
     font-family: 'Amiri', serif;
     font-size: 2.5rem;
@@ -243,6 +231,7 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
     color: var(--dark-text);
 }
+
 .translation {
     font-size: 1rem;
     font-style: italic;
@@ -250,6 +239,7 @@ h1, h2, h3, h4 {
     margin-bottom: 15px;
     line-height: 1.6;
 }
+
 .surah-name {
     font-weight: bold;
     color: var(--primary-color);
@@ -257,64 +247,78 @@ h1, h2, h3, h4 {
 
 /* Couple Section */
 .couple {
-    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    
 }
 
 .couple-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .person {
     text-align: center;
-    flex: 1;
-    min-width: 280px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .photo {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
+    width: 350px;
+    height: 450px;
+    margin: 20px auto;
+    border-radius: 15%;
     border: 5px solid var(--primary-color);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     overflow: hidden;
     position: relative;
 }
 
-.photo-placeholder {
+.photo img {
     width: 100%;
     height: 100%;
-    background-color: #e5dfd3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    color: #b8b1a2;
+    object-fit: cover;
 }
 
 .person h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
     color: var(--primary-color);
+    margin-top: 30px;
 }
 
 .person p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #555;
     line-height: 1.5;
+    margin-bottom: 30px;
 }
 
 .amp {
     font-family: var(--font-heading);
     font-size: 4rem;
     color: var(--primary-color);
+    margin: 10px 0;
 }
 
 /* Event Section */
+.event{
+    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-size: cover;
+    position: relative;
+}
+.event-title{
+    color: #d4af37;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
 .countdown {
     display: flex;
     justify-content: center;
@@ -358,6 +362,7 @@ h1, h2, h3, h4 {
     width: 100%;
     position: relative;
     overflow: hidden;
+    background-color: #fff;
 }
 
 .card::before {
@@ -405,7 +410,7 @@ h1, h2, h3, h4 {
 
 /* Gallery Section */
 .gallery {
-    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
 }
 .gallery-grid {
     display: grid;
@@ -429,11 +434,23 @@ h1, h2, h3, h4 {
 }
 
 /* Gift / Amplop Digital */
+.gift {
+    background:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("asset/img/background3.jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+    margin-top: 10px;
+}
+
 .gift-wrapper {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    
 }
 .gift-card {
     padding: 30px;
@@ -443,6 +460,7 @@ h1, h2, h3, h4 {
     flex: 1;
     min-width: 250px;
     max-width: 350px;
+    background-color: #fff;
 }
 .gift-icon {
     font-size: 2.5rem;
@@ -461,12 +479,18 @@ h1, h2, h3, h4 {
 
 /* RSVP & Guestbook */
 .rsvp {
-    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    padding: 80px 20px;
+    margin-top: 10px;
+    background-size: cover;
+    position: relative;
 }
 .rsvp-container {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 20px;
 }
 .rsvp-form {
     flex: 1;
@@ -482,71 +506,60 @@ h1, h2, h3, h4 {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--primary-color);
-    background-color: var(--bg-color);
+    background-color: #fff;
     color: var(--dark-text);
     border-radius: 8px;
     font-family: var(--font-text);
 }
 
-.guestbook {
-    flex: 1;
-    min-width: 300px;
-    padding: 30px;
-    border-radius: 15px;
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid var(--primary-color);
-}
-.guestbook h3 {
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    text-align: center;
-}
-.comments-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.comment-item {
-    padding: 15px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-color);
-}
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-.comment-header .name {
-    font-weight: bold;
-}
-.badge {
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    border-radius: 20px;
-    color: white;
-}
-.badge.hadir { background-color: #28a745; }
-.badge.tidak-hadir { background-color: #dc3545; }
-.comment-time {
-    font-size: 0.75rem;
-    color: #999;
-}
+
 
 /* Footer */
-footer {
+.footer {
     text-align: center;
     padding: 60px 20px;
+    background-image: url("asset/img/background1.jfif");
+    background-size: cover;
+    position: relative;
 }
 
-footer p {
+.footer-p {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #303030;
+    gap: 20px;
 }
 
 footer h2 {
     font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 100px;
+}
+
+.footer-photo {
+    width: 350px;
+    height: 450px;
+    margin: 20px auto;
+    border-radius: 30%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.footer-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-photo img:hover {
+    transform: scale(1.05);
+}
+
+.foot-closing{
+    margin-top: 20px;
 }
 
 /* Audio Control */
