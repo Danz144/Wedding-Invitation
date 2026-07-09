@@ -2,7 +2,7 @@
     --primary-color: #d4af37; /* Keraton Gold */ 
     --dark-text: #2b180d; /* Dark Brown Text */
     --light-text: #f7f3e8; /* Warm Cream */
-    --bg-image: url("asset/img/background1.jfif"); /* Cream Base */
+    --bg-image: url("asset/img/Background1.jfif"); /* Cream Base */
     --font-heading: 'Playfair Display', serif;
     --font-text: 'Poppins', sans-serif;
 }
@@ -518,7 +518,7 @@ h1, h2, h3, h4 {
 .footer {
     text-align: center;
     padding: 60px 20px;
-    background-image: url("asset/img/background1.jfif");
+    background-image: url("asset/img/Background1.jfif");
     background-size: cover;
     position: relative;
     align-items: center;
