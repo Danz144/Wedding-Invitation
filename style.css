@@ -2,7 +2,7 @@
     --primary-color: #d4af37; /* Keraton Gold */ 
     --dark-text: #2b180d; /* Dark Brown Text */
     --light-text: #f7f3e8; /* Warm Cream */
-    --bg-image: url("asset/img/Background1.jfif"); /* Cream Base */
+    --bg-image: url("asset/img/background1.jfif"); /* Cream Base */
     --font-heading: 'Playfair Display', serif;
     --font-text: 'Poppins', sans-serif;
 }
@@ -90,7 +90,7 @@ h1, h2, h3, h4 {
 }
 
 .cover-content {
-    background: rgba(61, 142, 92, 0.85); /* Semi-transparent Coffee Brown */
+    background: rgba(55, 126, 181, 0.85); /* Semi-transparent Coffee Brown */
     padding: 40px;
     border-radius: 20px;
     border: 2px solid var(--primary-color); /* Gold Border */
@@ -147,7 +147,7 @@ h1, h2, h3, h4 {
     z-index: 3;
 }
 
-.btn-open:hover, .btn-map:hover, .btn-copy:hover, .btn-submit:hover {
+.btn-open:hover, .btn-map:hover, .btn-copy:hover, .btn-submit:hover, .btn-save-date:hover {
     background-color: #e5c454;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
@@ -209,7 +209,7 @@ h1, h2, h3, h4 {
 
 /* Surah Section */
 .surah {
-    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.5)), url("asset/img/background2.jfif");
     padding: 80px 20px;
 }
 
@@ -247,7 +247,7 @@ h1, h2, h3, h4 {
 
 /* Couple Section */
 .couple {
-    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("asset/img/background2.jfif");
     background-size: cover;
     background-position: center;
     padding: 80px 20px;
@@ -260,6 +260,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    font-size: 1.5rem;
 }
 
 .person {
@@ -293,7 +294,7 @@ h1, h2, h3, h4 {
 }
 
 .person p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #555;
     line-height: 1.5;
     margin-bottom: 30px;
@@ -308,7 +309,7 @@ h1, h2, h3, h4 {
 
 /* Event Section */
 .event{
-    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.5)), url("asset/img/background2.jfif");
     background-size: cover;
     position: relative;
 }
@@ -319,12 +320,44 @@ h1, h2, h3, h4 {
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
-.countdown {
+.countdown{
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 50px;
     flex-wrap: wrap;
+}
+
+.save-date-btn{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-save-date{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 28px;
+    border-radius: 999px;
+
+    background: #d4af37;      /* sama seperti btn-map */
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.btn-save-date:hover{
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+.btn-save-date i {
+    font-size: 1rem;
+    color: #222;
 }
 
 .time-box {
@@ -363,6 +396,7 @@ h1, h2, h3, h4 {
     position: relative;
     overflow: hidden;
     background-color: #fff;
+    margin-top: 20px;
 }
 
 .card::before {
@@ -373,6 +407,7 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 5px;
     background-color: var(--primary-color);
+    
 }
 
 .card .icon {
@@ -408,9 +443,15 @@ h1, h2, h3, h4 {
     margin-top: 20px;
 }
 
+.save-date-btn {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
 /* Gallery Section */
 .gallery {
-    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("asset/img/background2.jfif");
 }
 .gallery-grid {
     display: grid;
@@ -425,7 +466,7 @@ h1, h2, h3, h4 {
 }
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -436,8 +477,8 @@ h1, h2, h3, h4 {
 /* Gift / Amplop Digital */
 .gift {
     background:
-        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
-        url("asset/img/background3.jfif");
+        linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+        url("asset/img/background2.jfif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -479,7 +520,7 @@ h1, h2, h3, h4 {
 
 /* RSVP & Guestbook */
 .rsvp {
-    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("asset/img/background2.jfif");
     padding: 80px 20px;
     margin-top: 10px;
     background-size: cover;
@@ -518,7 +559,7 @@ h1, h2, h3, h4 {
 .footer {
     text-align: center;
     padding: 60px 20px;
-    background-image: url("asset/img/Background1.jfif");
+    background-image: url("asset/img/background1.jfif");
     background-size: cover;
     position: relative;
     align-items: center;
