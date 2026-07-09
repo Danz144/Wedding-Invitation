@@ -209,7 +209,7 @@ h1, h2, h3, h4 {
 
 /* Surah Section */
 .surah {
-    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/Background3.jfif");
+    background-image: linear-gradient(rgba(255,255,255,0.8)), url("asset/img/background3.jfif");
     padding: 80px 20px;
 }
 
