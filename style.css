@@ -521,6 +521,7 @@ h1, h2, h3, h4 {
     background-image: url("asset/img/Background1.jfif");
     background-size: cover;
     position: relative;
+    align-items: center;
 }
 
 .footer-p {
