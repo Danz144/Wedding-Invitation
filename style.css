@@ -516,14 +516,17 @@ h1, h2, h3, h4 {
 
 /* Footer */
 .footer {
-    text-align: center;
-    padding: 60px 20px;
-    background-image: url("asset/img/Background1.jfif");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
-    align-items: center;
+    overflow: hidden;
+}
+
+.footer-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* atau cover */
+    z-index: -1;
 }
 
 .footer-p {
