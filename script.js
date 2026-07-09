@@ -241,10 +241,7 @@ form.addEventListener("submit", async (e) => {
             
             }
 
-    } catch (err) {
-        console.error(err);
-        alert("Gagal mengirim data.");
-    }
+    } 
 });
 
 
