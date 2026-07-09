@@ -222,7 +222,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
         const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbwe92hZ48lRUE13b8qz_2mxMbN2nuFoSWWTTO3_RqhFm4c-7_0IvEjrtKErOKQ3J9zrNg/exec",
+            "https://script.google.com/macros/s/AKfycbwIhNxaDi0CK6Ia6Xu9apRk43G4oDvqCC0ShILJreDPppwxSaYC_wJIy39lrpmU4YGHWg/exec",
             {
                 method: "POST",
                 body: formData
