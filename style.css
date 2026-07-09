@@ -213,6 +213,11 @@ h1, h2, h3, h4 {
     padding: 80px 20px;
 }
 
+.surah-logo{
+    width: 50%;
+    height: 50%;
+}
+
 .surah-content {
     max-width: 800px;
     margin: 0 auto;
@@ -222,12 +227,6 @@ h1, h2, h3, h4 {
     border: 2px solid var(--primary-color);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    align-items: center;
-}
-
-.surah-img {
-    width: 50%;
-    height: 50%;
 }
 
 .arabic {
@@ -266,6 +265,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    font-size: 1rem;
 }
 
 .person {
