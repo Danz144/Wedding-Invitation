@@ -516,17 +516,18 @@ h1, h2, h3, h4 {
 
 /* Footer */
 .footer {
-    position: relative;
-    overflow: hidden;
+    background-image: url("asset/img/background1.jfif");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
 }
 
-.footer-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* atau cover */
-    z-index: -1;
+/* HP */
+@media (max-width: 768px) {
+    .footer {
+        background-size: cover;
+        background-position: center top;
+    }
 }
 
 .footer-p {
