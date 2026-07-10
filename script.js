@@ -72,29 +72,68 @@ document.addEventListener('DOMContentLoaded', () => {
         isPlaying = !isPlaying;
     });
 
-    // Countdown Timer (08 Agustus 2026, 08:00)
-    const weddingDate = new Date("August 8, 2026 08:00:00").getTime();
+    // =========================================
+            // COUNTDOWN WEDDING (WIB / Asia Jakarta)
+            // =========================================
 
-    const updateCountdown = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+            // Target acara (WIB = UTC+7)
+            const targetDate = new Date("2026-08-08T10:00:00+07:00").getTime();
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            function updateCountdown() {
+                const now = Date.now();
+                const distance = targetDate - now;
 
-        document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+                if (distance <= 0) {
+                    clearInterval(countdownInterval);
 
-        if (distance < 0) {
-            clearInterval(updateCountdown);
-            document.querySelector(".countdown").innerHTML = "<h2>Acara Berlangsung Hari Ini</h2>";
-        }
-    }, 1000);
+                    document.getElementById("days").textContent = "00";
+                    document.getElementById("hours").textContent = "00";
+                    document.getElementById("minutes").textContent = "00";
+                    document.getElementById("seconds").textContent = "00";
 
+                    document.querySelector(".countdown").innerHTML = `
+                        <h2 style="color:#d4af37;">
+                            🎉 Acara Sedang Berlangsung
+                        </h2>
+                    `;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) /
+                    (1000 * 60 * 60)
+                );
+
+                const minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) /
+                    (1000 * 60)
+                );
+
+                const seconds = Math.floor(
+                    (distance % (1000 * 60)) /
+                    1000
+                );
+
+                document.getElementById("days").textContent =
+                    String(days).padStart(2, "0");
+
+                document.getElementById("hours").textContent =
+                    String(hours).padStart(2, "0");
+
+                document.getElementById("minutes").textContent =
+                    String(minutes).padStart(2, "0");
+
+                document.getElementById("seconds").textContent =
+                    String(seconds).padStart(2, "0");
+            }
+
+            // Jalankan sekali saat halaman dibuka
+            updateCountdown();
+
+            // Update setiap 1 detik
+            const countdownInterval = setInterval(updateCountdown, 1000);
     // Scroll Reveal Animation
     function reveal() {
         const reveals = document.querySelectorAll(".reveal");
